@@ -1,0 +1,76 @@
+﻿@page
+@model AnonyTalk.Pages.PaintTogetherModel
+@{
+    ViewData["Title"] = "Paint Together";
+}
+
+<div class="row">
+    <div class="col-12">
+        <h2>Current room: Paint Together</h2>
+        <span id="currentChatroom" class="hidden">Paint</span>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <p>Your name: <span id="username"></span></p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-9">
+        <canvas id="canvas" width="800" height="500" onmouseout="clearMousePositions();" style="background-color:white;"></canvas>
+    </div>
+    <div class="col-md-3">
+        
+        <div class="form-group">
+            <label for="sel1">Colors:</label>
+            <select class="form-control" id="colors">
+                <option value="black">Black</option>
+                <option value="white">White</option>
+                <option value="red">Red</option>
+                <option value="yellow">Yellow</option>
+                <option value="blue">Blue</option>
+                <option value="purple">Purple</option>
+                <option value="orange">Orange</option>
+                <option value="gray">Gray</option>
+            </select>
+        </div>
+        <br />
+        <button id="clearCanvas" class="btn btn-danger">Clear Canvas</button>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-12">
+        <div class="form-horizontal">
+            <div class="form-group">
+                <input type="text" id="userMessage" class="col-md-8 form-control" style="max-width: 700px;" maxlength="80" />
+                <div class="col-md-2">
+                    <input type="button" id="sendButton" value="Send Message" class="btn btn-primary" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <table id="messageTable" class="table">
+            <thead>
+                <tr>
+                    <th class="text-right" width="100px;">Username</th>
+                    <th>Message</th>
+                    <th width="100px;">Date</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    <script src="~/js/paint.js"></script>
+}

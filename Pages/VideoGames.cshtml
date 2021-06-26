@@ -1,0 +1,53 @@
+﻿@page
+
+@{
+    ViewData["Title"] = "Video Games";
+}
+
+<div class="container" style="min-height:600px; margin-top:30px;">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>AnonyTalk</h1>
+            <p>Anonymous real time chat application.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Current room: Video Games</h2>
+            <span id="currentChatroom" class="hidden">VideoGames</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            Your name: <span id="username"></span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="form-horizontal">
+
+                <div class="form-group">
+                    <input type="text" id="userMessage" class="col-md-8 form-control" style="max-width: 600px;" />
+                    <div class="col-md-2">
+                        <input type="button" id="sendButton" value="Send Message" class="btn btn-primary"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <table id="messageTable" class="table">
+                <thead>
+                    <tr>
+                        <th class="text-right" width="100px;">Username</th>
+                        <th>Message</th>
+                        <th width="100px;">Date</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
