@@ -7,9 +7,9 @@ Features:
 - "Paint Together" page, where users can draw and see another user's drawing/painting on the same page in real time.
 - Users Online - a count of users online that increments or decrements whenever someone connects or disconnects
 
-![All chat example with 3 users](https://gitlab.com/wilcoforr/anonytalk/raw/master/example-1.PNG)
+![All chat example with 3 users](example-1.PNG)
 
-![Painting Together - real time painting](https://gitlab.com/wilcoforr/anonytalk/raw/master/example-2.PNG)
+![Painting Together - real time painting](example-2.PNG)
 
 ## Bugs
 
