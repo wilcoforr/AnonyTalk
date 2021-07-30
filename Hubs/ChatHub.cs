@@ -23,15 +23,11 @@ namespace AnonyTalk.Hubs
         /// <returns></returns>
         public async Task SendMessage(string username, string message, string currentChatroom)
         {
-            //Im not sure if script injection is even possible, but to just be safe
-            //obviously for a real production facing web app this would be checked and also implement rate-limiting for messages
-            //being sent, so a User just cant spam messages into the chatroom.
-            string sanitizedMessage = message.Replace("&", "&amp;").Replace("<", "&lt;").Replace(">", "&gt;"); //System.Net.WebUtility.HtmlEncode(message);
+            //in a real production web app - lean on framework to sanitize/encode message? so anyone cant
+            //just spam HTML code into the web app.
+            //string encoded = System.Net.WebUtility.HtmlEncode(message);
 
-            //use this with groups instead of a string of the chatroom
-            //await Client.Group.SendAsync("ReceiveMessage", username, sanitizedMessage, currentChatroom);
-
-            await Clients.All.SendAsync("ReceiveMessage", username, sanitizedMessage, currentChatroom);
+            await Clients.All.SendAsync("ReceiveMessage", username, message, currentChatroom);
         }
 
         /// <summary>
